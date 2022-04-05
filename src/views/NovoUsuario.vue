@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <h1>Novo Usuario</h1>
         <form @submit.prevent="enviarFormulario">
             <div class="form-group">

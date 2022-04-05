@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <h1>Login</h1>
         <form @submit.prevent="efetuarLogin">
             <div class="form.group">
@@ -10,12 +10,14 @@
                 <label for="senha">Senha</label>
                 <input type="password" class="form-control" v-model="usuario.senha">
             </div>
-            <button type='submit' class="btn btn-primary brn-block"> 
+            <button type="submit" class="btn btn-primary brn-block"> 
                 Logar 
             </button>
+            <div>
             <router-link :to="{ name: 'novo.usuario' }">
                 Não possui um cadastro, cadastre-se aqui!
             </router-link>
+            </div>
         </form>
     </div>
 </template>

@@ -1,90 +1,75 @@
 <template>
-  <div id="app">
-    <div>
-    <!-- Image and text -->
-      <b-navbar variant="faded" type="light">
-        <b-navbar-brand href="#">
-          <img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten">
-           BootstrapVue
-          </b-navbar-brand>
-      </b-navbar>
-    </div>
-  
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-bytebank">
-        <a class="navbar-brand" href="#">Viver</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto" v-if="usuarioestaLogado">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">HomeView</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">
-            About
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <a
-                href="#"
-                class="nav-link"
-                @click.prevent="efetuarLogout">Logout</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav mr-auto" v-else>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/login">Login</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/cadastre-se" class="nav-link">
-            Registre-se
-            </router-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    </div>
-    <router-view />
-  </div>
+  <NavBar/>
+  <router-view/>
+  <Footer/>
 
 </template>
 
 <script>
+import NavBar from './components/NavBar.vue'
+import Footer from './components/Footer.vue'
     export default {
-        methods:{
-            efetuarLogout () {
-                localStorage.removeItem('token')
-                this.$router.push({ name: 'login'})
-
-            }
-        },
-        computed: {
-            usuarioestaLogado() {
-                return Boolean(localStorage.getItem('token'))
-            }
-        }
+      components: {
+        NavBar,
+        Footer
+      },
+        
     }
 </script>
 
 <style>
-.navbar {
-  background: #b5b8b6;
+*{
+  font-family: Helvetica;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.navbar-bytebank a {
-  color: #000;
+
+.main-container{
+  text-align: center;
+  font-size: 10px;
+  margin-bottom: 30px;
+  color: #222;
+  min-height: 250px
 }
-.navbar-bytebank a:hover {
-  color: #000;
+
+h1{
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #222
 }
+
+/*#Navbar-header {
+  text-align: right  ;
+  background: rgb(196, 193, 193);
+  
+}
+
+#logo-Nav {
+  margin: auto;
+  margin-left: 0;
+ }
+
+
+ End global styles 
+
+#app > * {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#app > form {
+  max-width: 100%;
+}
+#app h1 {
+  display: block;
+  min-width: 100%;
+  width: 100%;
+  text-align: left  ;
+  margin: 0;
+  margin-bottom: 1rem;
+}*/
 </style>
+
+

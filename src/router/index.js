@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import NovoUsuario from '../views/NovoUsuario'
 import About from '../views/AboutView'
 import Login from '../views/Login.vue'
+//import 'bootstrap'
+
 
 const routes = [
   {

@@ -1,10 +1,12 @@
 <template>
-  <div class="home">
+  <Banner/>
+  <div class="main-container">
     <h1>HOME</h1>
   </div>
 </template>
 
 <script>
+import Banner from '../components/Banner.vue'
 import http from '@/http'
 // @ is an alias to /src
 
@@ -13,7 +15,7 @@ import http from '@/http'
 export default {
   name: 'HomeView',
   components: {
-    
+    Banner
   },
   mounted () {
     http.get('/')
