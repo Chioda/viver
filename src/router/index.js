@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import NovoUsuario from '../views/NovoUsuario'
+import NovoUsuario from '../views/NovoUsuario.vue'
 import About from '../views/AboutView'
 import Login from '../views/Login.vue'
+import AreaComum from '../views/AreaComum.vue'
 //import 'bootstrap'
 
 
@@ -29,7 +30,13 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
-}
+  },
+
+  {
+    path: '/areacomum',
+    name: 'areacomum',
+    component: AreaComum
+  }
 ]
 
 const router = createRouter({

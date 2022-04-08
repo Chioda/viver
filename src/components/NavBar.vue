@@ -8,35 +8,27 @@
 
         <ul class="navbar-nav mr-auto" v-if="usuarioestaLogado">
             
-            <button class="nav-item">
+            <button class="nav-item-logout">
               <a
                   href="#"
-                  class="nav-link"
+                  class="nav-link" 
                   @click.prevent="efetuarLogout">Logout</a>
             </button>
-            <div>
-                <li class="nav-item">
-                <router-link class="nav-link" to="/">HomeView</router-link>
-                </li>
-                <li class="nav-item">
-                <router-link to="/about" class="nav-link">
-                About
-                </router-link>
-                </li>
-            </div>    
+            
         </ul>
 
         <div class="navbar-nav mr-auto" v-else>
             <button class="nav-item">
               <a
                   href="#"
-                  class="nav-link"
+                  class="nav-link" 
                   @click.prevent="direcionaLogin">Login</a>
+                  
             </button>
             <button class="nav-item">
               <a
                   href="#"
-                  class="nav-link"
+                  class="nav-link" 
                   @click.prevent="direcionaRegistrar">Registre-se</a>
             </button>
             
@@ -52,12 +44,12 @@
     <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
     <ul class="menu">
         
-        <li><a  href="#"><i class="fa fa-user"></i> DESTAQUES</a></li>
+        <li><a  href="/"><i class="fa fa-user"></i> DESTAQUES</a></li>
         <li><a  href="#"><i class="fa fa-camera"></i> ANÚNCIOS</a></li>
         <li><a  href="#"><i class="fa fa-bullhorn"></i> FINANÇAS</a></li>
         <li><a  href="#"><i class="fa fa-tags"></i> CONVENÇÃO</a></li>
         <li><a  href="#"><i class="fa fa-envelope"></i> ASSEMBLÉIA ONLINE</a></li>
-        <li><a  href="#"><i class="fa fa-sitemap"></i> ÁREA COMUM</a></li>
+        <li><a  href="/areacomum"><i class="fa fa-sitemap"></i> ÁREA COMUM</a></li>
         <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> CHECK-IN</a></li>
         <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> ÁREA DO SÍNDICO</a></li>
     </ul>
@@ -80,12 +72,15 @@
                 efetuarLogout () {
                     localStorage.removeItem('token')
                     this.$router.push({ name: 'login'})
-
+                    setTimeout(function() {
+                        window.location.reload(1);
+                        }, 1);
                 }
             },
             computed: {
                 usuarioestaLogado() {
                     return Boolean(localStorage.getItem('token'))
+                    
                 }
         }
     }
@@ -116,6 +111,28 @@
     
   }
 
+  .nav-item{
+    background-color: blue; 
+    border-radius: 12px;
+    text: white,bold;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px, bold;
+  }
+
+   .nav-item-logout{
+    background-color:red; 
+    border-radius: 12px;
+    font: white,bold;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px, bold;
+  }
+
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800);
 
 *,html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,label,fieldset,input,p,blockquote,th,td {
@@ -138,7 +155,7 @@ html {
 }
 
 a {
-    color: #BA0707;
+    color: white;
     text-decoration: none;
 }
 

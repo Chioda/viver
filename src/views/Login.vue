@@ -15,7 +15,7 @@
             </button>
             <div>
             <router-link :to="{ name: 'novo.usuario' }">
-                Não possui um cadastro, cadastre-se aqui!
+                Cadastre-se aqui!
             </router-link>
             </div>
         </form>
@@ -24,6 +24,7 @@
 
 <script>
 import http from '@/http'
+
 
 export default {
     data () {
@@ -36,10 +37,16 @@ export default {
             http.post('auth/login', this.usuario)
                  .then(response => {
                      console.log(response)
-                     localStorage.setItem('token', response.data.access_token)
-                     this.$router.push({ name: 'about' })
+                     localStorage.setItem('token', response.data.access_token)                                          
+                     this.$router.push({ name: 'home' }) 
+                     setTimeout(function() {
+                        window.location.reload(1);
+                        }, 1);                 
                  })
                  .catch(erro => console.log(erro))
+
+                    
+            
         }
     }
 }
