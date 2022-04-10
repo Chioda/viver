@@ -1,66 +1,38 @@
 <template>
-  <div id="nav">
-    <!-- Image and text -->
-      
+    <div id="nav">      
         <router-link to="/" id="logo-url">
             <img src="../assets/Logo.jpeg" width="100"  height="40">
-        </router-link>    
+        </router-link>
+        <h1 id="mensagem-provisoria"><img src="../assets/Icon_Cons.jpg" width="50"  height="50"> SITE EM CONSTRUÇÃO!!!</h1>
 
-        <ul class="navbar-nav mr-auto" v-if="usuarioestaLogado">
-            
-            <button class="nav-item-logout">
-              <a
-                  href="#"
-                  class="nav-link" 
-                  @click.prevent="efetuarLogout">Logout</a>
-            </button>
-            
+        <ul class="navbar-nav mr-auto" v-if="usuarioestaLogado">         
+            <button class="nav-item-logout" type="Submit" href="#" @click.prevent="efetuarLogout">Logout</button>
         </ul>
-
         <div class="navbar-nav mr-auto" v-else>
-            <button class="nav-item">
-              <a
-                  href="#"
-                  class="nav-link" 
-                  @click.prevent="direcionaLogin">Login</a>
-                  
-            </button>
-            <button class="nav-item">
-              <a
-                  href="#"
-                  class="nav-link" 
-                  @click.prevent="direcionaRegistrar">Registre-se</a>
-            </button>
-            
-          
-        </div>
-      
-    
-    
-    
-  </div> 
-<ul class="navbar-nav mr-auto" v-if="usuarioestaLogado">
-  <nav>
-    <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
-    <ul class="menu">
-        
-        <li><a  href="/"><i class="fa fa-user"></i> DESTAQUES</a></li>
-        <li><a  href="#"><i class="fa fa-camera"></i> ANÚNCIOS</a></li>
-        <li><a  href="#"><i class="fa fa-bullhorn"></i> FINANÇAS</a></li>
-        <li><a  href="#"><i class="fa fa-tags"></i> CONVENÇÃO</a></li>
-        <li><a  href="#"><i class="fa fa-envelope"></i> ASSEMBLÉIA ONLINE</a></li>
-        <li><a  href="/areacomum"><i class="fa fa-sitemap"></i> ÁREA COMUM</a></li>
-        <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> CHECK-IN</a></li>
-        <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> ÁREA DO SÍNDICO</a></li>
+            <button class="nav-item" type="Submit" href="#" @click.prevent="direcionaLogin">Login</button>  
+            <button class="nav-item" type="Submit" href="#" @click.prevent="direcionaRegistrar">Registre-se </button>        
+        </div>   
+    </div> 
+    <ul class="navbar-nav mr-auto" v-if="usuarioestaLogado">
+        <nav>
+            <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
+            <ul class="menu">        
+                <li><a  href="/"><i class="fa fa-user"></i> DESTAQUES</a></li>
+                <li><a  href="#"><i class="fa fa-camera"></i> ANÚNCIOS</a></li>
+                <li><a  href="#"><i class="fa fa-bullhorn"></i> FINANÇAS</a></li>
+                <li><a  href="#"><i class="fa fa-tags"></i> CONVENÇÃO</a></li>
+                <li><a  href="#"><i class="fa fa-envelope"></i> ASSEMBLÉIA ONLINE</a></li>
+                <li><a  href="/areacomum"><i class="fa fa-sitemap"></i> ÁREA COMUM</a></li>
+                <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> CHECK-IN</a></li>
+                <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> ÁREA DO SÍNDICO</a></li>
+            </ul>
+        </nav> 
     </ul>
-  </nav> 
-  </ul>
 </template>
 
 <script>
     export default{
-        name: "NavBar", 
-            
+        name: "NavBar",             
         methods:{
                 direcionaLogin () {
                     this.$router.push({ name: 'login'})
@@ -68,24 +40,20 @@
                 direcionaRegistrar () {
                     this.$router.push({ name: 'novo.usuario'})
                 },
-
                 efetuarLogout () {
                     localStorage.removeItem('token')
                     this.$router.push({ name: 'login'})
                     setTimeout(function() {
                         window.location.reload(1);
-                        }, 1);
+                    }, 1);
                 }
-            },
-            computed: {
-                usuarioestaLogado() {
-                    return Boolean(localStorage.getItem('token'))
-                    
-                }
+        },
+        computed: {
+            usuarioestaLogado() {
+                return Boolean(localStorage.getItem('token'))                   
+            }
         }
-    }
-
-    
+    }    
 </script>
 
 <style>
@@ -105,34 +73,51 @@
     text-decoration: none;
 }
 
-  #logo-url{
-      margin: auto;
-      margin-left: 0;
-    
+#logo-url{
+    margin: auto;
+    margin-left: 0;    
   }
 
-  .nav-item{
+#mensagem-provisoria{
+    margin: auto;
+    margin-left: 0;
+    color:red;    
+}
+
+.nav-item{
     background-color: blue; 
     border-radius: 12px;
-    text: white,bold;
-    padding: 15px 15px;
+    padding: 8px 8px;
+    margin: 5px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 12px, bold;
+    color: #fff;
   }
+
+ .nav-item:hover{
+    background: #062486;
+    color: #fff;
+    text-decoration: none;
+ } 
 
    .nav-item-logout{
     background-color:red; 
     border-radius: 12px;
     font: white,bold;
-    padding: 15px 15px;
+    padding: 8px 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px, bold;
+    font-size: 12px;
+    color: #fff;
   }
 
+  .nav-item-logout:hover{
+    background: #cc0505;
+    color: #fff;
+    text-decoration: none;
+  }
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800);
 
 *,html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,label,fieldset,input,p,blockquote,th,td {
@@ -160,7 +145,7 @@ a {
 }
 
 a:hover {
-    color: #BA0707;
+    color: #1307ba;
 }
 
 body {
@@ -394,19 +379,6 @@ a.homer {
 }
 
 @media (max-width: 320px) {
-}
-  
-/*#nav a{
-    color: #fcba03;
-    text-decoration: none;
-    margin: 12px;
-    transition: .5s;
-}
-
-#nav a :hover{
-    color: #fff;
-
-}*/
-
-     
+}  
+   
 </style>

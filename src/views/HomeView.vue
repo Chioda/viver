@@ -6,45 +6,43 @@
       <li class="lista-destaques">
         <div>
           <div class="lado-lado">
-          <img class="painel-corpo" src="/img/Criancas.jpeg" alt="Criancas">          
-          <h2 class="painel-titulo">Colônia de Férias para as crianças do Viver</h2>
-          <span>10 de Janeiro de 2022</span>             
+            <img class="painel-corpo" src="/img/Criancas.jpeg" alt="Criancas">          
+            <h2 class="painel-titulo">Colônia de Férias para as crianças do Viver</h2>
+            <span>10 de Janeiro de 2022</span>             
           </div>
           <div class="lado-lado">
-          <img class="painel-corpo" src="/img/Covid.jpeg" alt="Covid">          
-          <h2 class="painel-titulo">Liberada a obrigatoriedade das mascaras no condomínio </h2>
-          <span>02 de Janeiro de 2022</span>   
+            <img class="painel-corpo" src="/img/Covid.jpeg" alt="Covid">          
+            <h2 class="painel-titulo">Liberada a obrigatoriedade das mascaras no condomínio </h2>
+            <span>02 de Janeiro de 2022</span>   
           </div>
           <div class="lado-lado">
-          <img class="painel-corpo" src="/img/Gas.jpeg" alt="Gas">         
-          <h2 class="painel-titulo">Nova assembléia para regras dos medidores de Gás</h2>
-          <span>10 de Dezembro de 2021</span> 
+            <img class="painel-corpo" src="/img/Gas.jpeg" alt="Gas">         
+            <h2 class="painel-titulo">Nova assembléia para regras dos medidores de Gás</h2>
+            <span>10 de Dezembro de 2021</span> 
           </div>
         </div>
       </li>
     </ul>
-
   </div>
-
 </template>
 
 <script>
-import http from '@/http'
+  import http from '@/http'
 
-// @ is an alias to /src
+  // @ is an alias to /src
 
 
-export default {
-  name: 'HomeView',
-  
-  mounted () {
-    http.get('/')
-      .then(response => this.home = response.data)
-      .catch(erro => console.log(erro))
-      
-},
-  
-}
+  export default {
+    name: 'HomeView',
+    
+    mounted () {
+      http.get('/')
+        .then(response => this.home = response.data)
+        .catch(erro => console.log(erro))
+        
+  },
+    
+  }
 </script>
 
 <style scoped>

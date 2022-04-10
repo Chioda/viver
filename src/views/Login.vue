@@ -1,25 +1,29 @@
 <template>
-    <div class="main-container">
-        <h1>Login</h1>
+  <body class="body">
+    <div class="main-container">        
+        <h1>Efetue seu Login</h1>
         <form @submit.prevent="efetuarLogin">
             <div class="form.group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" v-model="usuario.email">
+                <label for="email">E-mail  </label>
+                <input type="email" class="form-control" v-model="usuario.email">                
             </div>
+            <br>
             <div class="form.group">
-                <label for="senha">Senha</label>
+                <label for="senha">Senha  </label>
                 <input type="password" class="form-control" v-model="usuario.senha">
             </div>
-            <button type="submit" class="btn btn-primary brn-block"> 
+            <br>
+            <button type="submit" class="btn-primary"> 
                 Logar 
             </button>
-            <div>
+            <div class="cadastro-name">
             <router-link :to="{ name: 'novo.usuario' }">
                 Cadastre-se aqui!
             </router-link>
             </div>
         </form>
-    </div>
+    </div>      
+  </body>
 </template>
 
 <script>
@@ -51,3 +55,45 @@ export default {
     }
 }
 </script> 
+
+<style scoped>
+  body {
+    background-image: url("../assets/Fundo.jpeg");
+    height: 471px;
+  }
+
+  .main-container { 
+    background-color: grey;
+    position: absolute;
+    border-radius: 12px;
+    margin-block: 100px;
+    left:40%;
+    font-size: 15px; 
+    color: white, bold;
+    
+    padding: 50px
+  }
+
+  h1{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  .cadastro-name {
+    font-size: 10px;
+    padding: 10px;
+    
+  }
+
+  label{
+    color:white
+  }
+
+  .btn-primary{
+    padding:5px;
+    
+    
+  }
+</style>

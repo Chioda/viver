@@ -1,24 +1,15 @@
 
 
 <template>
-<section id="main-banner" class="mainSection bg-img-section img-fluid" style="background-image: url(img/Churrasqueira.jpeg);">
-    <h2>Banner</h2>
-
-</section>
-
+    <section id="main-banner" class="mainSection bg-img-section img-fluid" style="background-image: url(img/Churrasqueira.jpeg);">
+        <h2>Banner</h2>
+    </section>
 </template>
 
 <script>
-
-
-
-export default{
-    name: "Banner"
-}
-
-
-
-
+    export default{
+      name: "Banner"
+    }   
 </script>
 
 <style scoped>
