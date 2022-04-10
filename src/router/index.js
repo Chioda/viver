@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import NovoUsuario from '../views/NovoUsuario.vue'
-import About from '../views/AboutView'
+import Convencao from '../views/Convencao.vue'
 import Login from '../views/Login.vue'
 import AreaComum from '../views/AreaComum.vue'
 //import 'bootstrap'
@@ -14,12 +14,12 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/convencao',
+    name: 'convencao',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: About
+    component: Convencao
   },
   {
     path: '/cadastre-se',

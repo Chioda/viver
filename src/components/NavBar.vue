@@ -20,7 +20,7 @@
                 <li><a  href="/"><i class="fa fa-user"></i> DESTAQUES</a></li>
                 <li><a  href="#"><i class="fa fa-camera"></i> ANÚNCIOS</a></li>
                 <li><a  href="#"><i class="fa fa-bullhorn"></i> FINANÇAS</a></li>
-                <li><a  href="#"><i class="fa fa-tags"></i> CONVENÇÃO</a></li>
+                <li><a  href="/convencao"><i class="fa fa-tags"></i> CONVENÇÃO</a></li>
                 <li><a  href="#"><i class="fa fa-envelope"></i> ASSEMBLÉIA ONLINE</a></li>
                 <li><a  href="/areacomum"><i class="fa fa-sitemap"></i> ÁREA COMUM</a></li>
                 <li><a  href="#"><i class="fa fa-exclamation-triangle"></i> CHECK-IN</a></li>
