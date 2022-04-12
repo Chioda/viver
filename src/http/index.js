@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: 'https://cond-viver.vercel.app/',
+    baseURL: 'http://localhost:8000',
     headers: {
         'Accept': 'application/json',
         'Content': 'application/json'
