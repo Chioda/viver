@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### Compiles star-auth
+```
+npm run start-auth
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
