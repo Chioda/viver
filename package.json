@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "start": "json-server --watch ./database.json",
+    "build": "vue-cli-service build",    
     "start-auth": "node server.js"
   },
   "dependencies": {
